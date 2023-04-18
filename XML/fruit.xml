@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fruitstall orderid="123" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="fruit.xsd">
+	<delivery>XYZ</delivery>
+	<To>
+		<name>Raj</name>
+		<city>PCMC</city>
+		<country>India</country>
+	</To>
+	<item>
+		<fruit>Apples</fruit>
+		<imported>Kashmir</imported>
+		<quantity>10</quantity>
+		<price>1200</price>
+	</item>
+	<item>
+		<fruit>Mangoes</fruit>
+		<imported>Ratnagiri</imported>
+		<quantity>8</quantity>
+		<price>1000</price>
+	</item>
+	<item>
+		<fruit>Grapes</fruit>
+		<imported>Nashik</imported>
+		<quantity>12</quantity>
+		<price>900</price>
+	</item>
+	<item>
+		<fruit>Oranges</fruit>
+		<imported>Nagpur</imported>
+		<quantity>15</quantity>
+		<price>1300</price>
+	</item>
+</fruitstall>

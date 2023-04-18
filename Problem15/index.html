@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Size Calculator</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		input {
+			padding: 10px;
+			font-size: 16px;
+		}
+		button {
+			padding: 10px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<input type="file" id="file" name="file">
+		<button type="button" id="btn">Calculate File Size</button>
+	</form>
+
+	<div id="result"></div>
+
+	<script>
+		// define a click event handler function for the button
+		$("#btn").click(function() {
+			// get the selected file and check if it is valid
+			var file = $("#file").prop("files")[0];
+			if (!file) {
+				$("#result").html("Please select a file.");
+				return;
+			}
+
+			// calculate the file size in bytes
+			var size = file.size;
+
+			// convert the size to KB, MB, or GB as appropriate
+			if (size < 1024) {
+				size = size + " bytes";
+			} else if (size < 1048576) {
+				size = (size / 1024).toFixed(2) + " KB";
+			} else if (size < 1073741824) {
+				size = (size / 1048576).toFixed(2) + " MB";
+			} else {
+				size = (size / 1073741824).toFixed(2) + " GB";
+			}
+
+			// display the result to the user
+			$("#result").html("The size of the selected file is " + size + ".");
+		});
+	</script>
+</body>
+</html>

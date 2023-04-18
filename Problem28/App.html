@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Registration and Login Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>User Registration and Login Form</h1>
+      <form v-if="!loggedIn" @submit.prevent="login">
+        <label for="username">Username:</label>
+        <input type="text" id="username" v-model="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" v-model="password">
+        <br>
+        <button type="submit">Login</button>
+        <p v-if="errorMessage">{{ errorMessage }}</p>
+      </form>
+      <div v-else>
+        <p>Welcome, {{ username }}!</p>
+        <button @click="logout">Logout</button>
+      </div>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          username: '',
+          password: '',
+          loggedIn: false,
+          errorMessage: ''
+        },
+        methods: {
+          login: function() {
+            // Check if the username and password are valid
+            if (this.username === 'myusername' && this.password === 'mypassword') {
+              // Set the loggedIn flag to true
+              this.loggedIn = true;
+            } else {
+              // Display an error message
+              this.errorMessage = 'Invalid username or password';
+            }
+          },
+          logout: function() {
+            // Set the loggedIn flag to false
+            this.loggedIn = false;
+            // Clear the username and password fields
+            this.username = '';
+            this.password = '';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

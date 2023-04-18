@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		input {
+			padding: 10px;
+			font-size: 16px;
+		}
+		button {
+			padding: 10px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text" id="num1" placeholder="Enter a number">
+		<input type="text" id="num2" placeholder="Enter another number">
+		<button type="button" id="btn">Add Numbers</button>
+	</form>
+
+	<script>
+		// define a click event handler function
+		$("#btn").click(function() {
+			// get the values of the input fields and store them in variables
+			var num1 = $("#num1").val();
+			var num2 = $("#num2").val();
+
+			// convert the values to numbers and perform addition
+			var sum = parseInt(num1) + parseInt(num2);
+
+			// display the result in an alert message
+			alert("The sum of " + num1 + " and " + num2 + " is " + sum);
+		});
+	</script>
+</body>
+</html>
